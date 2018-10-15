@@ -5,6 +5,7 @@ phases:
       - npm install time
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket pipelineserverless 
                                    --output-template-file outputSamTemplate.yaml
+      - aws cloudformation deploy --template-file /codebuild/output/src574386102/src/outputSamTemplate.yaml --stack-name test-stack
 artifacts:
   type: zip
   files:
